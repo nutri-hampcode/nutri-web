@@ -1,0 +1,62 @@
+<div class="diet-history-container">
+    <form [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form-field">
+            <mat-label>Portion Quantity</mat-label>
+            <input matInput formControlName="portion_quantity" placeholder="Ingrese la cantidad de consumo">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Ingrese la fecha">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>        
+        <mat-form-field appearance="fill">
+            <mat-label>Select Meal</mat-label>
+            <mat-select formControlName="meal" required>
+                <mat-option *ngFor="let meal of meals" [value]="meal.id">{{ meal.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>  
+        <mat-form-field appearance="fill">
+            <mat-label>Select Meal Type</mat-label>
+            <mat-select formControlName="mealType" required>
+              <mat-option *ngFor="let type of MealType | keyvalue" [value]="type.key">{{ type.value }}</mat-option>
+            </mat-select>
+          </mat-form-field>  
+        <button mat-raised-button color="primary" class="submit-button" type="submit">
+            Añadir
+            </button>     
+    </form>
+      
+
+    <!-- Button to load the history -->
+    <button (click)="onDietHist()">
+        {{ isHistoryVisible ? 'hide my history' : 'show my history' }}
+    </button>
+
+    <!-- History of meals eaten, only if dietHist is defined -->
+    <div *ngIf="isHistoryVisible && dietHist?.content && dietHist.content.length > 0">
+      <div class="meal-entry" *ngFor="let history of dietHist.content">
+        <h3>{{ history.meal_type }} - {{ history.date}}</h3>
+        <p><strong>User:</strong> {{ history.user_name }}</p>
+        <p><strong>Meal:</strong> {{ history.meal.name }}</p>
+        <p><strong>Description:</strong> {{ history.meal.description }}</p>
+        <p><strong>Portion Quantity:</strong> {{ history.portion_quantity }}</p>
+        <p><strong>Calories:</strong> {{ history.meal.calories }} kcal</p>
+        <p><strong>Proteins:</strong> {{ history.meal.proteins }} g</p>
+        <p><strong>Carbs:</strong> {{ history.meal.carbs }} g</p>
+        <p><strong>Fat:</strong> {{ history.meal.fat }} g</p>
+        <p><strong>Diet Type:</strong> {{ history.meal.dietType }}</p>
+      </div>
+    
+
+    <!-- Pagination controls -->
+        <div class="pagination-controls">
+            <button (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+            <span>{{ currentPage + 1 }} of {{ dietHist.totalPages}}</span>
+            <button (click)="nextPage()" [disabled]="currentPage >= dietHist.totalPages - 1">Next</button>
+        </div>
+    </div>
+    <div *ngIf="dietHist?.totalPages === 0">
+        <p>No diet history available.</p>
+    </div>
+</div>  
