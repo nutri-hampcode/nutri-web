@@ -1,0 +1,22 @@
+html, body {
+    display: block;
+    background-color: #FFFEEB;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+app-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    height: 100px;
+    padding: 0 20px; 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    background-color: #FFFEEB;
+}
+
+.main-bod {
+    z-index: 1050;
+}
