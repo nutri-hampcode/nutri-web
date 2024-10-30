@@ -3,12 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100%;
     background-color: #FFFEEB;
 }
 h4{
-    padding-top: 70px;
+    padding-top: 50px;
     font-weight: bold;
 }
 p{
@@ -53,6 +52,7 @@ button.submit-button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: -90px;
 }
 
 .bottom-images img{

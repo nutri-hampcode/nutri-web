@@ -1,6 +1,22 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a href="/" class="navbar-brand">NutriMed</a>
+      <div class="left">
+        <img src="images/logo.png">
+        <a href="/" class="navbar-brand">NutriMed</a>
+      </div>
+      <div class="center">
+        <ul class="center-menu">
+          <li>
+            <a routerLink="/user">PLAN NUTRICIONAL</a>
+          </li>
+          <li>
+            <a routerLink="/user">ASESORÍA ALIMENTICIA</a>
+          </li>
+          <li>
+            <a routerLink="/user">COACHING DE EJERCICIO</a>
+          </li>
+        </ul>
+      </div>
       <div [ngClass]="{'collapse': isNavbarCollapsed, 'navbar-collapse': true}" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown ms-3">
