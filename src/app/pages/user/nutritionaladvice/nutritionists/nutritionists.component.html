@@ -1,32 +1,57 @@
 <div class="nutritionists-container">
-    <h1>Horarios de Nutricionistas</h1>
+    <h3>Horarios de Nutricionistas</h3>
     <p>Recibe apoyo de los mejores nutricionistas del país!</p>
     
     <div class="main-content">
       <!-- Calendario a la izquierda -->
       <div class="calendar-section">
-        <!-- Campo para seleccionar fecha -->
-        <mat-form-field appearance="fill">
-          <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" [(ngModel)]="selectedDate">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-  
+        <mat-calendar [(selected)]="selectedDate"></mat-calendar>
+        
+            <!-- Nutritionist Selection Dropdown -->
+        <div class="nutritionist-selection" (click)="toggleDropdown()">
+            <mat-icon>person</mat-icon>
+            <span>{{ selectedNutritionistName || 'Elige un nutricionista' }}</span>
+            <mat-icon *ngIf="isDropdownOpen">expand_less</mat-icon>
+            <mat-icon *ngIf="!isDropdownOpen">expand_more</mat-icon>
+        </div>
+    
+        <!-- Dropdown List -->
+        <div *ngIf="isDropdownOpen" class="nutritionist-options">
+            <div class="nutritionist-option" (click)="selectNutritionist(null)">
+                --
+              </div>
+            <div 
+            *ngFor="let nutritionist of nutritionists" 
+            (click)="selectNutritionist(nutritionist)" 
+            class="nutritionist-option"
+            >
+            {{ nutritionist.firstName }} {{ nutritionist.lastName }}
+            </div>
+        </div>
+        <!-- Botón de búsqueda -->
         <button mat-raised-button color="primary" (click)="buscar()">Buscar <mat-icon>search</mat-icon></button>
-      </div>
+    </div>
   
-      <!-- Listado de nutricionistas -->
-      <div class="nutritionists">
-        <div *ngFor="let nutritionist of selectedDateDoctors" class="nutritionist-card">
-          <img src="images/doge.png" alt="Nutritionist">
-          <div class="nutritionist-info">
-            <h3>{{ nutritionist.firstName }} {{ nutritionist.lastName }}</h3>
-            <p>Especialista en nutrición</p>
-            <p>Horarios Disponibles</p>
-            <div class="available-times">
-              <span *ngFor="let schedule of nutritionist.schedules">{{ schedule.time }}</span>
+      <div class="rightdiv">
+        <!-- Listado de nutricionistas con horarios -->
+        <div class="nutritionists">
+          <div *ngFor="let nutritionist of displayedNutritionists" class="nutritionist-card">
+            <img src="images/doge.png" alt="Nutritionist">
+            <div class="nutritionist-info">
+              <h3>{{ nutritionist.firstName }} {{ nutritionist.lastName }}</h3>
+              <p id="esp">Especialista en nutrición</p>
+              <p id="horari"><strong>Horarios Disponibles</strong></p>
+              <div class="available-times">
+                <span *ngFor="let schedule of nutritionist.schedules">{{ schedule.time }}</span>
+              </div>
             </div>
           </div>
+        </div>
+  
+        <!-- Botones de navegación -->
+        <div class="navigation-buttons">
+          <button mat-button (click)="previousPage()" [disabled]="currentPage === 0"><img src="images/Vector2.png" alt="left arrow"></button>
+          <button mat-button (click)="nextPage()" [disabled]="!hasNextPage()"><img src="images/Vector.png" alt="right arrow"></button>
         </div>
       </div>
     </div>

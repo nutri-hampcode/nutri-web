@@ -2,12 +2,75 @@
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.nutritionist-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    cursor: pointer;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.nutritionist-selection mat-icon:first-child {
+    margin-right: 10px;
+}
+
+#nutritionistSelect {
+    border: none;
+    background: transparent;
+    font-size: 1em;
+    padding: 5px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.nutritionist-options {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20%;
+    width: 200px;
+    z-index: 100;
+}
+
+.nutritionist-option {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nutritionist-option:hover {
+    background-color: #f0f0f0;
+}
+
+h3{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+p{
+    margin-bottom: 40px;
+    color: #757575;
+    font-weight: bold;
 }
 
 .main-content {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 120px;
     margin-top: 20px;
 }
 
@@ -15,6 +78,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.calendar-section button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.calendar-section button mat-icon{
+    margin-left: 10px;
+}
+
+.calendar-section button:hover{
+    background-color: #299C34;
+}
+
+.calendar-section mat-calendar{
+    background-color: white;
+    width: 280px;
+    border: black 1px solid;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 .search-button {
@@ -33,9 +125,9 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #299c35ce;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: none;
     max-width: 400px;
     width: 100%;
 }
@@ -58,17 +150,54 @@
 
 .nutritionist-info p {
     margin: 5px 0;
+    font-size: 14px;
+}
+
+#esp{
+    margin-top: -15px;
+}
+
+#horari{
+    color: #4CAF50;
 }
 
 .available-times {
     display: flex;
     gap: 10px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .available-times span {
     background-color: #4CAF50;
-    color: white;
+    color: #FFFFFF;
     padding: 5px 10px;
     border-radius: 5px;
+}
+
+.right-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-buttons button{
+    margin-left: 15px;
+    background-color: #FFFEEB;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation-buttons button img{
+    width: 40%;
+    height: 50%;
+}
+
+.navigation-buttons button img:hover{
+    filter: contrast(0.4);
 }

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../../../../core/services/auth.service';
+import { MatCalendar } from '@angular/material/datepicker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NutritionistService } from '../../../../core/services/nutritionist.service';
 import { Availability, NutriWithSchedules } from '../../../../shared/models/availability.model';
@@ -30,6 +30,13 @@ export class NutritionistsComponent {
   availabilityMap: { [doctorId: number]: Availability[] } = {};
   selectedDateDoctors: NutriWithSchedules[] = [];
   selectedDate: Date | null = null;
+  displayedNutritionists: NutriWithSchedules[] = [];
+  selectedNutritionistId: number | null = null;
+  isDropdownOpen = false;
+  selectedNutritionistName: string | null = null;
+
+  currentPage: number = 0;
+  itemsPerPage: number = 2;
 
   ngOnInit() {
     this.loadNutritionistsAvailability();
@@ -54,7 +61,6 @@ export class NutritionistsComponent {
     this.nutritionistService.getAvailability(doctorId).subscribe({
       next: (data: Availability[]) => {
         this.availabilityMap[doctorId] = data;
-        console.log(this.availabilityMap);
       },
       error: (error) => {
         this.showSnackBar(`Error loading availability for doctor ${doctorId}`);
@@ -63,30 +69,68 @@ export class NutritionistsComponent {
     });
   }
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectNutritionist(nutritionist: any) {
+    if (nutritionist === null) {
+      this.selectedNutritionistId = null;  
+      this.selectedNutritionistName = 'Elige un nutricionista'; 
+    } else {
+      this.selectedNutritionistId = nutritionist.id;
+      this.selectedNutritionistName = `${nutritionist.firstName} ${nutritionist.lastName}`;
+    }
+    this.isDropdownOpen = false;
+  }
+
   buscar() {
     if (!this.selectedDate) {
-      this.showSnackBar("Por favor, selecciona una fecha");
+      this.showSnackBar("Please, choose a date");
       return;
     }
-  
+
     const selectedDateStr = this.selectedDate.toISOString().split('T')[0];
-    
+
     this.selectedDateDoctors = this.nutritionists
-    .map(nutritionist => {
-      const schedules = this.availabilityMap[nutritionist.id]?.filter(schedule => schedule.date === selectedDateStr) || [];
-      return schedules.length > 0 ? { ...nutritionist, schedules } as NutriWithSchedules : null;
-    })
-    .filter(nutritionist => nutritionist !== null);
-  
+      .filter(nutritionist => !this.selectedNutritionistId || nutritionist.id === this.selectedNutritionistId)
+      .map(nutritionist => {
+        const schedules = this.availabilityMap[nutritionist.id]?.filter(schedule => schedule.date === selectedDateStr) || [];
+        return schedules.length > 0 ? { ...nutritionist, schedules } as NutriWithSchedules : null;
+      })
+      .filter(nutritionist => nutritionist !== null);
+
     if (this.selectedDateDoctors.length === 0) {
-      this.showSnackBar("No hay nutricionistas disponibles para la fecha seleccionada");
+      this.showSnackBar("Nutritionist not available for the selected date");
+    }
+
+    this.currentPage = 0;
+    this.updateDisplayedNutritionists();
+  }
+
+  updateDisplayedNutritionists() {
+    const startIndex = this.currentPage * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.displayedNutritionists = this.selectedDateDoctors.slice(startIndex, endIndex);
+  }
+
+  nextPage() {
+    if (this.hasNextPage()) {
+      this.currentPage++;
+      this.updateDisplayedNutritionists();
     }
   }
 
-  onDateSelected(event: MatDatepickerInputEvent<Date>) {
-    this.selectedDate = event.value;
+  previousPage() {
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.updateDisplayedNutritionists();
+    }
   }
 
+  hasNextPage(): boolean {
+    return (this.currentPage + 1) * this.itemsPerPage < this.selectedDateDoctors.length;
+  }
 
   private showSnackBar(message: string): void {
     this.snackbar.open(message, 'Close', {
