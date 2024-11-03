@@ -6,11 +6,12 @@ import { NutritionalPlanService } from '../../../core/services/nutritional-plan.
 import { UserService } from '../../../core/services/user.service';
 import { NutritionalPlanDetailsDTO } from '../../../shared/models/nutritional-plan-details.dto';
 import { NutritionalPlanMealsComponent } from "../nutritional-plan-meals/nutritional-plan-meals.component";
+import { NavbarComponent } from "../../../shared/components/navbar/navbar.component";
 
 @Component({
     selector: 'app-nutritional-plans', // Double-check this selector usage is consistent
     standalone: true,
-    imports: [CommonModule, RouterLink, NutritionalPlanMealsComponent],
+    imports: [CommonModule, RouterLink, NutritionalPlanMealsComponent, NavbarComponent],
     templateUrl: './nutritional-plans.component.html',
     styleUrls: ['./nutritional-plans.component.css']
 })

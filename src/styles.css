@@ -2,9 +2,9 @@
     --green-maincolor: #299C34;
     --background-color: #FFFFEB;
 }
-
 html, body { height: 100%; margin: 0; padding: 0; }
 body { margin: 0; }
 app-root{ display: flex; height: 100vh; width: 100%; justify-content: center; }
-app-nutritional-plans { display: inherit; width: 100%; justify-content: center; }
+app-nutritional-plans, app-user-layout { display: inherit; width: 100%; justify-content: center; }
+app-user-layout{flex-direction: column;}
 .container { display: flex; height: 100%; width: 100%; margin: 0; justify-content: center; font-family: "Josefin Sans", sans-serif; font-optical-sizing: auto; background-color: var(--background-color); }

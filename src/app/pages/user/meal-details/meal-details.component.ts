@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MealsNutritionalPlanService } from '../../../core/services/meals-nutritional-plan.service';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 
 @Component({
     selector: 'app-meal-details',
     standalone: true,
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule, RouterLink, NavbarComponent],
     templateUrl: './meal-details.component.html',
     styleUrls: ['./meal-details.component.css']
 })

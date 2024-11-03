@@ -4,23 +4,8 @@ html, body {
     margin: 0;
     background-color: #FFFEEB;
 }
-
 router-outlet {
     min-height: 100%;
     background-color: #FFFEEB;
 }
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    height: 100%;
-    width: 100%;
-    background-color: #FFFEEB;
-}
-router-outlet {
-    min-height: 100%;
-    background-color: #FFFEEB;
-}
+*{ margin: 0; padding: 0; box-sizing: border-box;}
