@@ -1,0 +1,65 @@
+.diet-history-show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFEEB;
+    padding: 20px;
+    overflow: hidden !important;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.dhs-sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.meal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.meal-entry {
+    width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f93a;
+    font-size: 20x;
+}
+
+.meal-entry:hover {
+    background-color:  #299c35ce;
+    color: white;
+}
+
+.pagination-controls {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-controls button {
+    padding-top: 5px;
+    margin-bottom: 30px;
+    background-color: #FFFEEB;
+    border: none;
+    cursor: pointer;
+}
+
+.diet-history-show-container img{
+    width: 26%;
+    height: 26%;
+}

@@ -1,0 +1,80 @@
+.subcontainer{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.fullmeal-container{
+    width: 80%;
+    height: 100%;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+}
+.meal-details-title h1, .meal-details-title h3, h4.meals-details-enjoy{
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.meal-details-title h1{
+    font-size: 40px;
+    line-height: 130%;
+}
+.meal-details-title h1 span{
+    font-size: 68px;
+}
+.meal-details-title h1::after{
+    display: flex;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    margin-bottom: -20px;
+}
+.meal-details-title h3, .meals-details-enjoy{
+    font-size: 20px;
+}
+.meal-details-description{
+    line-height: 130%;
+    letter-spacing: -2.2%;
+}
+.meal-details-description ul p{
+    margin-top: 10px;
+}
+.meal-image-container{
+    width: 25%;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.meal-image-container img{
+    max-height: 100%;
+    width: auto;
+}
+.meal-details-container{
+    width: 75%;
+    margin-left: 80px;
+}
+.meal-details-nutritionalvalue{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.meal-details-nutritionalvalue-value{
+    margin: 8px 25px;
+}
+.meal-details-nutritionalvalue-value h6{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 22px;
+}
+.meal-details-nutritionalvalue-value p{
+    font-size: 30px;
+}
+.meal-details-nutritionalvalue h6, .meal-details-nutritionalvalue-value h6{
+    font-family: inherit; margin: 0;
+}

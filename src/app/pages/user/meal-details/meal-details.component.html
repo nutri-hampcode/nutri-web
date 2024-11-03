@@ -1,0 +1,44 @@
+<div *ngIf="mealData">
+  <div class="container">
+    <div class="subcontainer">
+      <div class="fullmeal-container">
+        <div class="meal-image-container">
+          <img
+          [src]="mealData.imageUrl || 'images/nutrifoodnotfound.jpg'"
+          alt="{{ mealData.name }}"
+          onerror="this.onerror=null; this.src='images/nutrifoodnotfound.jpg'"
+          />
+        </div>
+        
+        <div class="meal-details-container">
+          <div class="meal-details-title">
+            <h1>Detalles de<br><span>Nutrición</span></h1>
+            <h3>Receta: {{ mealData.name }}</h3>
+          </div>
+          <p class="meal-details-description" [innerHTML]="sanitizedDescription"></p>
+          <h4 class="meals-details-enjoy">¡Disfruta!</h4>
+          <div class="meal-details-nutritionalvalue">
+            <h6 style="margin-right: 30px;">Valor Nutricional:</h6>
+            <div style="display: inherit; flex-direction: row;">
+              <div class="meal-details-nutritionalvalue-value"><h6>Calorías:</h6><p>{{ mealData.calories }}</p></div>
+              <div class="meal-details-nutritionalvalue-value"><h6>Proteínas:</h6><p>{{ mealData.proteins }} g</p></div>
+              <div class="meal-details-nutritionalvalue-value"><h6>Carbohidratos:</h6><p>{{ mealData.carbs }} g</p></div>
+              <div class="meal-details-nutritionalvalue-value"><h6>Grasa:</h6><p>{{ mealData.fat }} g</p></div>
+            </div>
+            <!--<ul>
+              <li><strong>Calories:</strong> {{ mealData.calories }}</li>
+              <li><strong>Proteins:</strong> {{ mealData.proteins }} g</li>
+              <li><strong>Carbs:</strong> {{ mealData.carbs }} g</li>
+              <li><strong>Fat:</strong> {{ mealData.fat }} g</li>
+              <li><strong>Diet Type:</strong> {{ mealData.dietType }}</li>
+            </ul>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!mealData">
+  <p>Loading meal details...</p>
+</div>

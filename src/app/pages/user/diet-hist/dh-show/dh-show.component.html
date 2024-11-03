@@ -1,0 +1,35 @@
+<div class="diet-history-show-container">
+    <h3 class="title">History of Meals Eaten</h3>
+    <!-- History of meals eaten, only if dietHist is defined -->
+    <div *ngIf="dietHist?.content && dietHist.content.length > 0" class="dhs-sub">
+        <div class="meal-container">
+            <div class="meal-entry" *ngFor="let history of dietHist.content">
+            <h6>{{ history.meal_type }}</h6>
+            <p>{{ history.date}}</p>
+            <p><strong>Meal:</strong> {{ history.meal.name }}</p>
+            <p><strong>Portion quantity:</strong> {{ history.portion_quantity }}</p>
+            <p><strong>Calories:</strong> {{ history.meal.calories }} kcal</p>
+            <p><strong>Proteins:</strong> {{ history.meal.proteins }} g</p>
+            <p><strong>Carbs:</strong> {{ history.meal.carbs }} g</p>
+            <p><strong>Fat:</strong> {{ history.meal.fat }} g</p>
+            </div>
+        </div>
+      
+  
+      <!-- Pagination controls -->
+          <div class="pagination-controls">
+              <button (click)="previousPage()" [disabled]="currentPage === 0">
+                <img src="images/Vector2.png" alt="Previous" style="width: 10px; height: 12px;">
+              </button>
+              <span>{{ currentPage + 1 }} of {{ dietHist.totalPages}}</span>
+              <button (click)="nextPage()" [disabled]="currentPage >= dietHist.totalPages - 1">
+                <img src="images/Vector.png" alt="Next" style="width: 10px; height: 12px;">
+              </button>
+          </div>
+    </div>
+    <div *ngIf="dietHist?.totalPages === 0">
+        <p>No diet history available.</p>
+    </div>
+
+    <img src="images/desayuno.png" alt="desayuno">
+</div>
