@@ -3,6 +3,7 @@ import { UserLayoutComponent } from './layout/user-layout.component';
 import { DhAddComponent } from './diet-hist/dh-add/dh-add.component';
 import { DhShowComponent } from './diet-hist/dh-show/dh-show.component';
 import { NutritionalPlansComponent } from './nutritional-plans/nutritional-plans.component';
+import { NutritionistsComponent } from './nutritionaladvice/nutritionists/nutritionists.component';
 
 export const userRoutes: Routes = [
     {
@@ -11,7 +12,9 @@ export const userRoutes: Routes = [
         children: [
             { path: 'diet-hist', component: DhAddComponent },
             { path: 'diet-hist/show', component: DhShowComponent },
-            { path: 'nutritional-plans', component: NutritionalPlansComponent }
+            { path: 'nutritional-plans', component: NutritionalPlansComponent },
+            { path: 'nutri-adv', component: NutritionistsComponent}
+
         ]
     }
 ];

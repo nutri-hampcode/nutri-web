@@ -9,4 +9,6 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
   templateUrl: './user-layout.component.html',
   styleUrl: './user-layout.component.css'
 })
-export class UserLayoutComponent {}
+export class UserLayoutComponent {
+
+}
