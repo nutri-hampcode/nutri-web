@@ -76,4 +76,8 @@ export class NutritionalPlanMealsComponent implements OnInit {
         console.log('Final organized meals:', result);
         return result;
     }
+
+    navigateToMealDetail(mealId: number) {
+        this.router.navigate(['/meal-detail', mealId]);
+    }
 }
