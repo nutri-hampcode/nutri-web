@@ -42,7 +42,8 @@
               <p id="esp">Especialista en nutrición</p>
               <p id="horari"><strong>Horarios Disponibles</strong></p>
               <div class="available-times">
-                <span *ngFor="let schedule of nutritionist.schedules">{{ schedule.time }}</span>
+                <span *ngFor="let schedule of nutritionist.schedules"
+                    (click)="goToAppointment(schedule.id)">{{ schedule.time }}</span>
               </div>
             </div>
           </div>

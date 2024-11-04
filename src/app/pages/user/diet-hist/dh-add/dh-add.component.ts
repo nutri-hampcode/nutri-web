@@ -12,12 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MealType } from '../../../../shared/models/meal-type.model';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dh-add',
   standalone: true,
   imports: [CommonModule, RouterLink, MatFormFieldModule, MatInputModule, MatNativeDateModule,
-    MatSelectModule, MatOptionModule, FormsModule, ReactiveFormsModule, MatDatepickerModule],
+    MatSelectModule, MatOptionModule, FormsModule, ReactiveFormsModule, MatDatepickerModule,
+    MatButtonModule],
   templateUrl: './dh-add.component.html',
   styleUrl: './dh-add.component.css'
 })
