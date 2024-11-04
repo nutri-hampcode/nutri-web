@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Availability } from '../../shared/models/availability.model';
 import { Appointment } from '../../shared/models/appointment.model';
+import { AppointmentHistory } from '../../shared/models/appointment-history.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class AppointmentService {
 
   addAppointment(appointment: Appointment, userId: number): Observable<Appointment>{
     return this.http.post<Appointment>(`${this.baseURL}/${userId}`, appointment);
+  }
+
+  getAppointmentHistory(userId: number): Observable<AppointmentHistory[]> {
+    return this.http.get<AppointmentHistory[]>(`${this.baseURL}/history/${userId}`);
   }
 }
