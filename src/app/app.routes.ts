@@ -3,6 +3,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { authInverseGuard } from './core/guards/auth-inverse.guard';
 import { NutritionalPlansComponent } from './pages/user/nutritional-plans/nutritional-plans.component';
 import { MealDetailsComponent } from './pages/user/meal-details/meal-details.component';
+import { HomeComponent } from './pages/user/home/home.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
@@ -18,4 +19,5 @@ export const routes: Routes = [
     },
     { path: 'nutritional-plans', component: NutritionalPlansComponent  },
     { path: 'meal/:id', component: MealDetailsComponent },
+    { path: 'home', component: HomeComponent },
 ];
