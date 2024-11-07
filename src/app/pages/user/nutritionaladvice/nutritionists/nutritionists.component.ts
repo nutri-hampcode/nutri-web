@@ -30,6 +30,8 @@ export class NutritionistsComponent {
   private snackbar = inject(MatSnackBar);
   private router = inject(Router);
   private appointmentService = inject(AppointmentService);
+
+  media_url: string = 'http://localhost:8080/api/v1/media/';
   nutritionists: Doctor[] = [];
   availabilityMap: { [doctorId: number]: Availability[] } = {};
   selectedDateDoctors: NutriWithSchedules[] = [];
@@ -50,6 +52,7 @@ export class NutritionistsComponent {
     this.nutritionistService.getDoctors().subscribe({
       next: (data: Doctor[]) => {
         this.nutritionists = data;
+        console.log(this.nutritionists);
         data.forEach((doctor) => {
           this.loadAvailability(doctor.id);
         });

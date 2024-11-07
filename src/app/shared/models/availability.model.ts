@@ -9,5 +9,6 @@ export interface Availability {
 }
 
 export interface NutriWithSchedules extends Doctor {
+    doctorImg: string;
     schedules: Availability[];
 }
