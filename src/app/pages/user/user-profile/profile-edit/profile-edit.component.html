@@ -1,0 +1,79 @@
+<div class="profile-container">
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="profileForm" class="profile-content">
+    <h2>Editar Perfil</h2>
+    
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="profile-section">
+        <h3>Información Personal</h3>
+        <div class="profile-field">
+          <label for="name">Nombre:</label>
+          <input id="name" formControlName="name" type="text" placeholder="Nombre completo" />
+        </div>
+        <div class="profile-field">
+          <label for="username">Usuario:</label>
+          <input id="username" formControlName="username" type="text" placeholder="Nombre de usuario" />
+        </div>
+        <div class="profile-field">
+          <label for="email">Email:</label>
+          <input id="email" formControlName="email" type="email" placeholder="Correo electrónico" />
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h3>Datos Físicos</h3>
+        <div class="profile-field">
+          <label for="height">Altura (cm):</label>
+          <input id="height" formControlName="height" type="number" placeholder="Altura en cm" />
+        </div>
+        <div class="profile-field">
+          <label for="weight">Peso (kg):</label>
+          <input id="weight" formControlName="weight" type="number" placeholder="Peso en kg" />
+        </div>
+        <div class="profile-field">
+          <label for="age">Edad:</label>
+          <input id="age" formControlName="age" type="number" placeholder="Edad" />
+        </div>
+        <div class="profile-field">
+          <label for="allergies">Alergias:</label>
+          <select id="allergies" formControlName="allergies">
+            <option value="">Seleccionar alergias</option>
+            <option *ngFor="let allergy of allergiesOptions" [value]="allergy">
+              {{ allergy }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="profile-section">
+        <h3>Preferencias</h3>
+        <div class="profile-field">
+          <label for="goal">Meta:</label>
+          <select id="goal" formControlName="goal">
+            <option value="">Seleccionar meta</option>
+            <option *ngFor="let goal of goals" [value]="goal.id">
+              {{ goal.goalType }}
+            </option>
+          </select>
+        </div>
+        <div class="profile-field">
+          <label for="dietType">Tipo de Dieta:</label>
+          <select id="dietType" formControlName="dietType">
+            <option value="">Seleccionar tipo de dieta</option>
+            <option *ngFor="let dietType of dietTypes" [value]="dietType.id">
+              {{ dietType.type }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" class="save-button">Guardar Cambios</button>
+        <button type="button" class="cancel-button" (click)="cancelEdit()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
