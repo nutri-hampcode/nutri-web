@@ -25,7 +25,7 @@
               <mat-error>Este campo es obligatorio</mat-error>
             }
           </mat-form-field>
-          <p id="forgotps"><span class="pointer-text">Olvidé mi contraseña</span></p>
+          <p id="forgotps"><a [routerLink]="['/mail/recuperacion']">Olvidé mi contraseña</a></p>
           <button mat-raised-button color="primary" class="submit-button" type="submit" [disabled]="loginForm.invalid">
             Log In
           </button>
