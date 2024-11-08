@@ -12,5 +12,8 @@ export const routes: Routes = [
         path: 'user',
         loadChildren: () => import('./pages/user/user.routes').then(c => c.userRoutes),
         canActivate:[authGuard]
-    }
+    },
+    { path: 'mail', 
+        loadChildren: () => import('./pages/mail/mail.routes').then(c => c.mailRoutes),
+    },
 ];
