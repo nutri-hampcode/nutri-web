@@ -16,4 +16,6 @@ export const routes: Routes = [
     { path: 'mail', 
         loadChildren: () => import('./pages/mail/mail.routes').then(c => c.mailRoutes),
     },
+    { path: 'nutritional-plans', component: NutritionalPlansComponent  },
+    { path: 'meal/:id', component: MealDetailsComponent },
 ];
