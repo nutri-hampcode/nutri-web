@@ -1,1 +1,48 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <div class="left">
+        <img src="images/logo.png">
+        <a href="/" class="navbar-brand">NutriMed</a>
+      </div>
+      <div class="center">
+        <ul class="center-menu">
+          <li>
+            <a routerLink="/user">PLAN NUTRICIONAL</a>
+          </li>
+          <li>
+            <a routerLink="/user">ASESORÍA ALIMENTICIA</a>
+          </li>
+          <li>
+            <a routerLink="/user">COACHING DE EJERCICIO</a>
+          </li>
+        </ul>
+      </div>
+      <div [ngClass]="{'collapse': isNavbarCollapsed, 'navbar-collapse': true}" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown ms-3">
+            <a
+              class="nav-link dropdown-toggle"
+              id="profileDropdown"
+              role="button"
+              (click)="toggleProfileMenu()"
+              aria-expanded="isProfileMenuVisible"
+            >
+              <img src="images/doge.png" alt="Foto de perfil" class="profile-photo" />
+            </a>
+            <ul class="dropdown-menu" *ngIf="isProfileMenuVisible">
+              <li>
+                <a class="dropdown-item" routerLink="/user">Ver Perfil</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="/user/diet-hist/show">Historial de platillos</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#" (click)="logout()">Cerrar Sesión</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
