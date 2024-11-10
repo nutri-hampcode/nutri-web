@@ -20,4 +20,5 @@ export const routes: Routes = [
     { path: 'nutritional-plans', component: NutritionalPlansComponent  },
     { path: 'meal/:id', component: MealDetailsComponent },
     { path: 'home', component: HomeComponent },
+    
 ];

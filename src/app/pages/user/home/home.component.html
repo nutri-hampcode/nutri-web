@@ -24,8 +24,8 @@
                 
                 <div class="carousel-content">
                   <div class="carousel-items" [style.transform]="'translateX(' + translateX + 'px)'">
-                    <div class="carousel-item" *ngFor="let image of images">
-                      <img [src]="image.url">
+                    <div class="carousel-item" *ngFor="let meal of images">
+                      <img [src]="meal.url">
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
         <div class="nutritionist-text">
             <p>Nuestros nutricionistas certificados están aquí para ayudarte a alcanzar tus objetivos de salud y bienestar.</p>
             <p>Con planes personalizados y asesoramiento experto, te ayudaremos a mantener y tener una alimentación equilibrada y saludable para lograr tus metas nutricionales.</p>
-            <button class="action-button">AGENDA TU CITA</button>
+            <button class="action-button" routerLink="/nutritional-plans">AGENDA TU CITA</button>
         </div>
     </div>
 </section>
@@ -73,8 +73,8 @@
                 
                 <div class="carousel-content">
                   <div class="carousel-items" [style.transform]="'translateX(' + translateX + 'px)'">
-                    <div class="carousel-item" *ngFor="let exercise of exercises">
-                      <img [src]="exercise.image" [alt]="exercise.description">
+                    <div class="carousel-item" *ngFor="let image of images2">
+                      <img [src]="image.url">
                     </div>
                   </div>
                 </div>
