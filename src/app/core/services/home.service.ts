@@ -15,6 +15,9 @@ export class HomeService {
 
   constructor(private http: HttpClient) {}
 
+  getNutritionalPlanDetailsDTOById(id: number): Observable<MealsNutritionalPlanDetailsDTO> {
+    return this.http.get<MealsNutritionalPlanDetailsDTO>(`${this.baseURL}/nutritional-plans/${id}`);
+  }
   getMealsByNutritionalPlanId(nutritionalPlanId: number): Observable<MealResponse[]> {
     return this.http.get<MealResponse[]>(`${this.baseURL}/nutritional-plan/${nutritionalPlanId}/meals`);
   }
