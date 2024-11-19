@@ -1,0 +1,25 @@
+<div class="appointment">
+    <div class="title">
+        <h3>History of appointments</h3>
+        <p>Citas con nuestros mejores nutricionistas!</p>
+    </div>
+    <div class="appointment-section">
+        <img src="images/appo.jpg" alt="nutricionista">
+        <div class="appointment-details">
+            <div class="appointment-per" *ngFor="let appointment of paginatedAppointments">
+                <p><strong>Date:</strong> {{ appointment.date}}</p>
+                <p><strong>Time:</strong> {{ appointment.time }}</p>
+                <p><strong>Doctor:</strong> {{ appointment.doctorName }}</p>
+                <p><strong>Reason:</strong> {{ appointment.reason }}</p>
+                <p><strong>Status:</strong> {{ isAppointmentActive(appointment.date, appointment.time) }}</p>
+            </div>
+        
+            <div class="pagination-controls">
+                <button (click)="prevPage()" [disabled]="currentPage === 0"><img src="images/Vector2.png" alt="Previous" style="width: 10px; height: 12px;">
+                </button>
+                <button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= appointments.length"><img src="images/Vector.png" alt="Next" style="width: 10px; height: 12px;">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

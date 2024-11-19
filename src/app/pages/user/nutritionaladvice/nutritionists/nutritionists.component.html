@@ -36,13 +36,14 @@
         <!-- Listado de nutricionistas con horarios -->
         <div class="nutritionists">
           <div *ngFor="let nutritionist of displayedNutritionists" class="nutritionist-card">
-            <img src="images/doge.png" alt="Nutritionist">
+            <img [src]="media_url + nutritionist.doctorImg" alt="Nutritionist">
             <div class="nutritionist-info">
               <h3>{{ nutritionist.firstName }} {{ nutritionist.lastName }}</h3>
               <p id="esp">Especialista en nutrición</p>
               <p id="horari"><strong>Horarios Disponibles</strong></p>
               <div class="available-times">
-                <span *ngFor="let schedule of nutritionist.schedules">{{ schedule.time }}</span>
+                <span *ngFor="let schedule of nutritionist.schedules"
+                    (click)="goToAppointment(schedule.id)">{{ schedule.time }}</span>
               </div>
             </div>
           </div>

@@ -12,12 +12,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { AppointmentService } from '../../../../core/services/appointment.service';
 
 @Component({
   selector: 'app-nutritionists',
   standalone: true,
   imports: [CommonModule, MatDatepickerModule, MatFormFieldModule, MatInputModule,
-    MatNativeDateModule, MatIconModule, FormsModule],
+    MatNativeDateModule, MatIconModule, FormsModule, MatButtonModule],
   templateUrl: './nutritionists.component.html',
   styleUrls: ['./nutritionists.component.css']
 })
@@ -25,7 +28,10 @@ import { FormsModule } from '@angular/forms';
 export class NutritionistsComponent {
   private nutritionistService = inject(NutritionistService);
   private snackbar = inject(MatSnackBar);
+  private router = inject(Router);
+  private appointmentService = inject(AppointmentService);
 
+  media_url: string = 'https://nutri-api-latest.onrender.com/api/v1/media/';
   nutritionists: Doctor[] = [];
   availabilityMap: { [doctorId: number]: Availability[] } = {};
   selectedDateDoctors: NutriWithSchedules[] = [];
@@ -46,6 +52,7 @@ export class NutritionistsComponent {
     this.nutritionistService.getDoctors().subscribe({
       next: (data: Doctor[]) => {
         this.nutritionists = data;
+        console.log(this.nutritionists);
         data.forEach((doctor) => {
           this.loadAvailability(doctor.id);
         });
@@ -130,6 +137,12 @@ export class NutritionistsComponent {
 
   hasNextPage(): boolean {
     return (this.currentPage + 1) * this.itemsPerPage < this.selectedDateDoctors.length;
+  }
+
+  goToAppointment(scheduleId: number) {
+    this.appointmentService.setScheduleId(scheduleId);
+    const baseURL = ['/user', 'appointments'];
+    this.router.navigate(baseURL);
   }
 
   private showSnackBar(message: string): void {

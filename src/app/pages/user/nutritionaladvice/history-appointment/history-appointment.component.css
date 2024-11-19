@@ -1,0 +1,61 @@
+.appointment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    height: 100%; 
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+.title h3{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+.title p{
+    color: green;
+    font-weight: bold;
+}
+
+.appointment-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 100px;
+}
+
+.appointment-section img {
+    height: 280px;
+    width: 400px;
+}
+
+.appointment-per {
+    margin-bottom: 10px;
+    width: 300px;
+    color:#3f3e3e;
+}
+
+.pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.pagination-controls button {
+    background-color: #FFFEEB;
+    border: none;
+    cursor: pointer;
+}
+
+.pagination-controls button img:hover{
+    filter: contrast(0.4);
+}

@@ -1,6 +1,5 @@
 export interface MealResponse {
     id: number,
-    imageUrl: string,
     name: string,
     description: string,
     calories: number,
@@ -8,4 +7,5 @@ export interface MealResponse {
     carbs: number,
     fat: number,
     dietType: string,
+    image: string,
 }

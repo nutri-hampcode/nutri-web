@@ -1,0 +1,20 @@
+<div class="appointment-section">
+    <div class="ava-details">
+        <div *ngIf="availability">
+            <h3><strong>Reserve su cita</strong></h3>
+            <p><strong>Fecha:</strong> {{ availability.date }}</p>
+            <p><strong>Hora:</strong> {{ availability.time }}</p>
+            <p><strong>Doctor:</strong> {{ availability.doctorName }}</p>
+            <form [formGroup]="appForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>Motivo de cita</mat-label>
+                    <input matInput formControlName="reason" placeholder="reason" required>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="submit-button" type="submit">
+                    Reserva
+                </button>   
+            </form>
+        </div>
+        <img src="images/nutriapp.png" alt="appointments">
+    </div>
+</div>
