@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 import { authInverseGuard } from './core/guards/auth-inverse.guard';
+import { NutritionalPlansComponent } from './pages/user/nutritional-plans/nutritional-plans.component';
+import { MealDetailsComponent } from './pages/user/meal-details/meal-details.component';
+
 export const routes: Routes = [
     { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
     {
