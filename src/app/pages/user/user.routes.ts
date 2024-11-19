@@ -6,6 +6,9 @@ import { NutritionalPlansComponent } from './nutritional-plans/nutritional-plans
 import { NutritionistsComponent } from './nutritionaladvice/nutritionists/nutritionists.component';
 import { AppointmentsComponent } from './nutritionaladvice/appointments/appointments.component';
 import { HistoryAppointmentComponent } from './nutritionaladvice/history-appointment/history-appointment.component';
+import { ProfileShowComponent } from './user-profile/profile-show/profile-show.component';
+import { ProfileEditComponent } from './user-profile/profile-edit/profile-edit.component';
+
 export const userRoutes: Routes = [
     {
         path: '',
@@ -17,6 +20,8 @@ export const userRoutes: Routes = [
             { path: 'nutri-adv', component: NutritionistsComponent},
             { path: 'appointments', component: AppointmentsComponent },
             { path: 'appointments/history', component: HistoryAppointmentComponent }
+            {path : "profile", component: ProfileShowComponent},
+            {path : "profile/edit", component: ProfileEditComponent}
         ]
     }
 ];
