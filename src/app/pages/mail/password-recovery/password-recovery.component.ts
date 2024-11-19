@@ -35,7 +35,6 @@ export class PasswordResetComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Get token from URL
     this.token = this.route.snapshot.paramMap.get('token') || '';
     if (!this.token) {
       this.showSnackBar('Token inválido');
@@ -43,7 +42,6 @@ export class PasswordResetComponent implements OnInit {
       return;
     }
 
-    // Verify token validity
     this.passwordRecoveryService.checkTokenValidity(this.token).subscribe({
       next: (isValid) => {
         if (!isValid) {

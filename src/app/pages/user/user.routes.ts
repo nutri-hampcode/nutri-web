@@ -20,8 +20,8 @@ export const userRoutes: Routes = [
             { path: 'nutri-adv', component: NutritionistsComponent},
             { path: 'appointments', component: AppointmentsComponent },
             { path: 'appointments/history', component: HistoryAppointmentComponent },
-            {path : "profile", component: ProfileShowComponent},
-            {path : "profile/edit", component: ProfileEditComponent}
+            { path : "profile", component: ProfileShowComponent},
+            { path : "profile/edit", component: ProfileEditComponent}
         ]
     }
 ];
