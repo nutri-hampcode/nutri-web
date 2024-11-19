@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { StorageService } from './storage.service';
+import { UserService } from './user.service';
 import { AuthRequest } from '../../shared/models/auth-request.model';
 import { AuthResponse } from '../../shared/models/auth-response.model';
 import { RegisterRequest } from '../../shared/models/register-request.model';
@@ -17,13 +18,18 @@ export class AuthService {
   private baseURL = `${environment.baseURL}`;
   private http = inject(HttpClient);
   private storageService = inject(StorageService);
+  private userService = inject(UserService);
 
 
   constructor() { }
   login(authRequest: AuthRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.baseURL}/auth/login`, authRequest)
     .pipe(
-      tap(response => this.storageService.setAuthData(response))
+      tap(response => {
+        this.storageService.setAuthData(response);
+        this.userService.setUserId(response.id);
+        console.log('User ID set in UserService:', response.id);
+      })
     );
   }
   

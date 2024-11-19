@@ -1,0 +1,39 @@
+<div *ngIf="planId && mealsByDay">
+    <div class="container">
+      <div class="nutritionalplanmeals-title">
+        <h1>Plan de Comidas :</h1>
+      </div>
+      <div class="nutritionalplanmeals-prinmealplan">
+        <div class="nutritionalplanmeals-mealplan">
+          <div *ngFor="let day of daysOfWeek">
+            <ng-container *ngIf="mealsByDay[day]">
+              <h2>{{ day }}</h2>
+              <div class="mealplan-mealsoftheday">
+                <div class="mealsoftheday-card" *ngFor="let mealType of mealsByDay[day] | keyvalue">
+                  <h3>{{ mealType.key }}</h3>
+                  <div class="mealsoftheday-cardinfo" *ngFor="let meal of mealType.value" [routerLink]="['/meal', meal.meal.id]">
+                    <div class="mealsoftheday-cardinfoimg">
+                      <img 
+                        [src]="meal.meal.imageUrl" 
+                        class="nutrifoodnotfound"
+                        alt="{{ meal.meal.name }}" 
+                        onerror="this.onerror=null; this.src='images/nutrifoodnotfound.jpg'"
+                      />
+                    </div>
+                    <div class="mealsoftheday-cardinfotext">
+                      <p>{{ meal.meal.name }}</p>
+                      <a [routerLink]="['/meal', meal.meal.id]">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                      </a>
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </ng-container>
+            <div class="divisorline"><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

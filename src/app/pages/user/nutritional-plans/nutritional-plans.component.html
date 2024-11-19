@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div style="width: 100vw;" *ngIf="nutritionalPlan">
+  <div class="container">
+    <div class="subcontainer">
+      <div class="section-presentation">
+        <h2>¡Bienvenido a tu<br><span>Plan Nutricional!</span></h2>
+        <img src="images/nutriplanbanner.png" alt="Nutritional Plan Banner">
+      </div>
+      <div id="nutriplan-subtitles">
+        <p><strong>Tipo de Plan:</strong> {{ nutritionalPlan.type }}</p>
+        <p><strong>Doctor:</strong> {{ nutritionalPlan.doctor }}</p>
+      </div>
+      <app-nutritional-plan-meals id="nutriplan-nutritionalplanmeals" *ngIf="nutritionalPlan?.id" [planId]="nutritionalPlan.id"></app-nutritional-plan-meals>
+    </div>
+  </div>
+</div>
