@@ -1,0 +1,91 @@
+<!-- Navbar Component -->
+<app-navbar></app-navbar>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>¡BIENVENIDO DE NUEVO! <br> </h1>
+    </div>
+</div>
+
+<!-- Sección de Recetas -->
+<section class="section-container recipes-section">
+  <h2>RECETAS</h2>
+  <p class="section-subtitle">comida que nutre y encanta</p>
+  
+  <div class="carousel-container">
+    <div class="recipe-container">
+        <header class="recipe-header">
+        <div class="carousel-container">
+            <div class="carousel-container">
+                <button class="nav-button prev" (click)="prev()">
+                  <span class="arrow">&#10094;</span>
+                </button>
+                
+                <div class="carousel-content">
+                  <div class="carousel-items" [style.transform]="'translateX(' + translateX + 'px)'">
+                    <div class="carousel-item" *ngFor="let meal of meals">
+                      <img [src]="meal.meal.imageUrl">
+                    </div>
+                  </div>
+                </div>
+          
+                <button class="nav-button next" (click)="next()">
+                  <span class="arrow">&#10095;</span>
+                </button>
+            </div>
+        </div>
+        </header>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Nutricionistas -->
+<section class="section-container nutritionist-section">
+    <h2>NUTRICIONISTAS</h2>
+    <p class="section-subtitle">guía personalizada para tu bienestar</p>
+    
+    <div class="nutritionist-content">
+        <div class="nutritionist-image">
+            <img src="images/Nutricionista.png" alt="Nutricionista">
+        </div>
+        <div class="nutritionist-text">
+            <p>Nuestros nutricionistas certificados están aquí para ayudarte a alcanzar tus objetivos de salud y bienestar.</p>
+            <p>Con planes personalizados y asesoramiento experto, te ayudaremos a mantener y tener una alimentación equilibrada y saludable para lograr tus metas nutricionales.</p>
+            <button class="action-button" routerLink="/nutritional-plans">AGENDA TU CITA</button>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Ejercicios -->
+<section class="section-container exercise-section">
+    <h2>EJERCICIOS</h2>
+    <p class="section-subtitle">rutinas de ejercicio para todos los niveles</p>
+    
+  <div class="carousel-container">
+    <div class="recipe-container">
+        <header class="recipe-header">
+        <div class="carousel-container">
+            <div class="carousel-container">
+                <button class="nav-button prev" (click)="prev()">
+                  <span class="arrow">&#10094;</span>
+                </button>
+                
+                <div class="carousel-content">
+                  <div class="carousel-items" [style.transform]="'translateX(' + translateX + 'px)'">
+                    <div class="carousel-item" *ngFor="let exercise of exercises">
+                      <img [src]="exercise.image">
+                    </div>
+                  </div>
+                </div>
+          
+                <button class="nav-button next" (click)="next2()">
+                  <span class="arrow">&#10095;</span>
+                </button>
+            </div>
+        </div>
+        </header>
+    </div>
+  </div>
+    <button class="action-button green">VER MÁS</button>
+</section>
