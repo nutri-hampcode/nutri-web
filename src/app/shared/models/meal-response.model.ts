@@ -6,5 +6,6 @@ export interface MealResponse {
     proteins: number,
     carbs: number,
     fat: number,
-    dietType: string
+    dietType: string,
+    image: string,
 }
