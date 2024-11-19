@@ -1,0 +1,38 @@
+/*for and button column direction*/
+.ava-details{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 200px;
+}
+
+.ava-details img{
+    height: 300px;
+    width: 300px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button.submit-button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 40%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #3aa144;
+    color: white;
+    border: 1px; 
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button.submit-button:hover {
+    background-color: #299C34;
+    color: white;
+}

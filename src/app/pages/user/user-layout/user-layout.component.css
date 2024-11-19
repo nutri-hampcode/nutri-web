@@ -1,0 +1,32 @@
+html, body {
+    display: block;
+    background-color: #FFFEEB;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 1;
+}
+* {
+    background-color: #FFFEEB;
+}
+
+app-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #FFFEEB;
+    z-index: 999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.main-bod{
+    display: flex;
+    position: relative;
+    box-shadow: 0 -2px 4px rgba(77, 77, 77, 0.108);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

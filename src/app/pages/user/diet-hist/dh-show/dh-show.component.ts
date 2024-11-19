@@ -1,9 +1,8 @@
-
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import { UserDietHistService } from '../../../../core/services/user-diet-hist.service.service';
 import { AuthService } from '../../../../core/services/auth.service';
-import { RouterLink } from '@angular/router';
 import { UserDietHistResponse } from '../../../../shared/models/user-diet-history-response.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
