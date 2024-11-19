@@ -10,7 +10,6 @@ export enum Allergies {
     SHELLFISH = 'SHELLFISH'
 }
 
-
 export interface Customer {
     id:number,
     name:string,

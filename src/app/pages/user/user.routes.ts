@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { UserLayoutComponent } from './layout/user-layout.component';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { DhAddComponent } from './diet-hist/dh-add/dh-add.component';
 import { DhShowComponent } from './diet-hist/dh-show/dh-show.component';
 import { NutritionalPlansComponent } from './nutritional-plans/nutritional-plans.component';
@@ -19,7 +19,7 @@ export const userRoutes: Routes = [
             { path: 'nutritional-plans', component: NutritionalPlansComponent },
             { path: 'nutri-adv', component: NutritionistsComponent},
             { path: 'appointments', component: AppointmentsComponent },
-            { path: 'appointments/history', component: HistoryAppointmentComponent }
+            { path: 'appointments/history', component: HistoryAppointmentComponent },
             {path : "profile", component: ProfileShowComponent},
             {path : "profile/edit", component: ProfileEditComponent}
         ]

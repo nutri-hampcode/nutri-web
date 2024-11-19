@@ -1,0 +1,63 @@
+<div class="profile-container">
+  <div *ngIf="loading" class="loading">
+    Cargando perfil...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="userProfile && !loading" class="profile-content">
+    <h2>Perfil</h2>
+    
+    <div class="profile-section">
+      <h3>Información Personal</h3>
+      <div class="profile-field">
+        <label>Nombre:</label>
+        <span>{{ userProfile.name }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Usuario:</label>
+        <span>{{ userProfile.username }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Email:</label>
+        <span>{{ userProfile.email }}</span>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h3>Datos Físicos</h3>
+      <div class="profile-field">
+        <label>Altura:</label>
+        <span>{{ userProfile.height ? userProfile.height + ' cm' : 'No especificado' }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Peso:</label>
+        <span>{{ userProfile.weight ? userProfile.weight + ' kg' : 'No especificado' }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Edad:</label>
+        <span>{{ userProfile.age || 'No especificada' }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Alergias:</label>
+        <span>{{ userProfile.allergies || 'Ninguna registrada' }}</span>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h3>Preferencias</h3>
+      <div class="profile-field">
+        <label>Meta:</label>
+        <span>{{ goalName || 'No especificada' }}</span>
+      </div>
+      <div class="profile-field">
+        <label>Tipo de Dieta:</label>
+        <span>{{ dietTypeName || 'No especificado' }}</span>
+      </div>
+    </div>
+
+    <button (click)="editProfile()" class="edit-profile-button">Editar Perfil</button>
+  </div>
+</div>

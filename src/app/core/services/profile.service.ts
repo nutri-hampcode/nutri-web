@@ -34,5 +34,6 @@ export class ProfileService {
   getGoalsByID(goalId : number): Observable<Goal>{
     return this.http.get<Goal>(`${this.baseURL}/goals/${goalId}`);
   }
-
+  
 }
+
