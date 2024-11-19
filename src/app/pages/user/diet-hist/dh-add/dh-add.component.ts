@@ -12,12 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MealType } from '../../../../shared/models/meal-type.model';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dh-add',
   standalone: true,
   imports: [CommonModule, RouterLink, MatFormFieldModule, MatInputModule, MatNativeDateModule,
-    MatSelectModule, MatOptionModule, FormsModule, ReactiveFormsModule, MatDatepickerModule],
+    MatSelectModule, MatOptionModule, FormsModule, ReactiveFormsModule, MatDatepickerModule,
+    MatButtonModule],
   templateUrl: './dh-add.component.html',
   styleUrl: './dh-add.component.css'
 })
@@ -49,7 +51,7 @@ export class DhAddComponent {
       const formValues = this.mealForm.value;
       const mealId = parseInt(formValues.meal, 10);
       const formattedDate = formValues.date;
-
+      
       const authData = this.authService.getUser();
       const userId = authData?.id;
       if(userId){
@@ -66,6 +68,9 @@ export class DhAddComponent {
           }
         })}
     }
+    else{
+      this.showSnackBar('Please fill all the fields');
+    }
   }
   
   loadMealsByDietType(dietTypeId: number) {
@@ -74,6 +79,7 @@ export class DhAddComponent {
             this.meals = meals;
         },
         error: (error) => {
+            console.log(dietTypeId);
             this.showSnackBar('Error loading meals for the selected diet type');
             console.error(error);
         }
