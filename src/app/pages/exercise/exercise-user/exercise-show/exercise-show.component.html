@@ -1,0 +1,15 @@
+<div class="exercise-container">
+    <h2>Recomendaciones de Ejercicios</h2>
+    <p>Te recomendamos estos videos basados en tu objetivo!</p>
+    
+    <div class="exercise-grid">
+      <div class="exercise-card" *ngFor="let exercise of exercises">
+        <img [src]="exercise.image" alt="Ejercicio de {{ exercise.description }}" class="exercise-image"/>
+        <div class="exercise-info">
+          <h3>{{ exercise.description }}</h3>
+          <button [routerLink]="['/exercises', exercise.id]" class="view-video-btn">Ver video</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

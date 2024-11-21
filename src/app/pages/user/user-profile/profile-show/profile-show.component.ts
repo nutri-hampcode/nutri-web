@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ProfileService } from '../../../../core/services/profile.service';
 import { AuthService } from '../../../../core/services/auth.service';
-import { RouterLink } from '@angular/router';
 import { Customer } from '../../../../shared/models/user-profile.model';
-
 @Component({
     selector: 'app-profile',
     standalone: true,
-    imports: [CommonModule, RouterLink],
+    imports: [CommonModule],
     templateUrl: './profile-show.component.html',
     styleUrls: ['./profile-show.component.css']
 })

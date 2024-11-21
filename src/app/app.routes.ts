@@ -21,6 +21,11 @@ export const routes: Routes = [
         path: 'mail', 
         loadChildren: () => import('./pages/mail/mail.routes').then(c => c.mailRoutes),
     },
+    {
+        path: 'exercises',
+        loadChildren: () => import('./pages/exercise/exercise.routes').then(e => e.exerciseRoutes),
+        canActivate:[authGuard]
+    },
     { path: 'nutritional-plans', component: NutritionalPlansComponent  },
     { path: 'meal/:id', component: MealDetailsComponent },
     { path: 'home', component: HomeComponent },

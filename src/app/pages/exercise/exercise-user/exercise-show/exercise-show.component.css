@@ -1,0 +1,79 @@
+.exercise-container {
+    text-align: center;
+    background-color: #f9f5e8;
+    padding: 20px;
+  }
+  
+  .exercise-container h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .exercise-container p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .exercise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .exercise-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background-color: #fff;
+  }
+  
+  .exercise-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .exercise-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .exercise-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .exercise-info h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 10px 0 5px;
+  }
+  
+  .exercise-info p {
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  .view-video-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .view-video-btn:hover {
+    background-color: #218838;
+  }
+  
