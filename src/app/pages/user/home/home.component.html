@@ -25,7 +25,7 @@
                 <div class="carousel-content">
                   <div class="carousel-items" [style.transform]="'translateX(' + translateX + 'px)'">
                     <div class="carousel-item" *ngFor="let meal of meals">
-                      <img [src]="meal.meal.imageUrl">
+                      <img [src]="media_url + meal.meal.image" alt="meal">
                     </div>
                   </div>
                 </div>

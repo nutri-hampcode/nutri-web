@@ -14,7 +14,7 @@
                   <div class="mealsoftheday-cardinfo" *ngFor="let meal of mealType.value" [routerLink]="['/meal', meal.meal.id]">
                     <div class="mealsoftheday-cardinfoimg">
                       <img 
-                        [src]="meal.meal.imageUrl" 
+                        [src]="meal.meal.image" 
                         class="nutrifoodnotfound"
                         alt="{{ meal.meal.name }}" 
                         onerror="this.onerror=null; this.src='images/nutrifoodnotfound.jpg'"

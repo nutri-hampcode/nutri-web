@@ -5,12 +5,12 @@ export interface MealsNutritionalPlanDetailsDTO {
     meal: {
         id: number;
         name: string;
-        imageUrl: string;
         description: string;
         calories: number;
         proteins: number;
         carbs: number;
         fat: number;
         dietType: string;
+        image: string;
     };
 }
