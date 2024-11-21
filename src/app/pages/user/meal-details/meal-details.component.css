@@ -62,10 +62,10 @@
 }
 .meal-image-container img{
     max-height: 600px;
-    width: auto;
+    width: 900px;
 }
 .meal-details-container{
-    
+    max-width: 60%;
     padding-left: 80px;
     background-color:  #FFFEEB !important;
     flex-wrap: wrap;
