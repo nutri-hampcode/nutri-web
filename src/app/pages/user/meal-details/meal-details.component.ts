@@ -16,7 +16,7 @@ export class MealDetailsComponent implements OnInit {
     mealId!: number;
     mealData: any;
     sanitizedDescription: any;
-
+    media_url: string = 'https://nutri-api-latest.onrender.com/api/v1/media/';
     constructor(
         private route: ActivatedRoute,
         private mealsService: MealsNutritionalPlanService,

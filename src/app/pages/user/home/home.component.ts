@@ -24,8 +24,8 @@ export class HomeComponent  {
     private userProfileService = inject(ProfileService);
     private homeService = inject(HomeService);
     private nutritionalPlanService =  inject(NutritionalPlanService);
-    
-    media_url: string = 'http://localhost:8080/api/v1/media/';
+
+    media_url: string = 'https://nutri-api-latest.onrender.com/api/v1/media/';
     userProfile!: Customer;
     images = [{ url: 'https://hips.hearstapps.com/hmg-prod/images/crepes-1640022818.jpeg' },{ url: 'https://s2.abcstatics.com/abc/sevilla/media/gurmesevilla/2012/01/comida-rapida-casera.jpg' }, { url: 'https://img.hellofresh.com/w_3840,q_auto,f_auto,c_fill,fl_lossy/hellofresh_website/es/cms/SEO/recipes/albondigas-caseras-de-cerdo-con-salsa-barbacoa.jpeg' },{ url: 'https://fotografias.larazon.es/clipping/cmsimages01/2023/11/16/080445F5-DC20-409E-A8B9-498C90C12C90/dieta-mexicana-reduce-inflamacion-colesterol-malo-debido-sus-componentes_69.jpg?crop=1280,720,x0,y0&width=1280&height=720&optimize=low&format=jpg' }];
     meals: MealsNutritionalPlanDetailsDTO[] = [];

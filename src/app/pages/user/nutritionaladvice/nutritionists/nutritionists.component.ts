@@ -31,7 +31,7 @@ export class NutritionistsComponent {
   private router = inject(Router);
   private appointmentService = inject(AppointmentService);
 
-  media_url: string = 'http://localhost:8080/api/v1/media/';
+  media_url: string = 'https://nutri-api-latest.onrender.com/api/v1/media/';
   nutritionists: Doctor[] = [];
   availabilityMap: { [doctorId: number]: Availability[] } = {};
   selectedDateDoctors: NutriWithSchedules[] = [];

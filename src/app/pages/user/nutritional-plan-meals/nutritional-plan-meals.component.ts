@@ -14,7 +14,7 @@ import { MealsNutritionalPlanService } from '../../../core/services/meals-nutrit
 export class NutritionalPlanMealsComponent implements OnInit {
     @Input() planId!: number;
     mealsByDay: { [key: string]: { [key: string]: MealsNutritionalPlanDetailsDTO[] } } = {};
-    
+    media_url: string = 'https://nutri-api-latest.onrender.com/api/v1/media/';
     // Define the ordered list of days
     daysOfWeek: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 

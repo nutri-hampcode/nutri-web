@@ -5,7 +5,7 @@
       <div class="fullmeal-container">
         <div class="meal-image-container">
           <img
-          [src]="mealData.imageUrl || 'images/nutrifoodnotfound.jpg'"
+          [src]="media_url + mealData.image || 'images/nutrifoodnotfound.jpg'"
           alt="{{ mealData.name }}"
           onerror="this.onerror=null; this.src='images/nutrifoodnotfound.jpg'"
           />

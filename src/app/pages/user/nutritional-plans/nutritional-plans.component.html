@@ -10,6 +10,9 @@
         <p><strong>Tipo de Plan:</strong> {{ nutritionalPlan.type }}</p>
         <p><strong>Doctor:</strong> {{ nutritionalPlan.doctor }}</p>
       </div>
+      <div id="registro-platillo">
+        <button class="action-button" routerLink="/user/diet-hist">Registrar mi platillo</button>
+      </div>
       <app-nutritional-plan-meals id="nutriplan-nutritionalplanmeals" *ngIf="nutritionalPlan?.id" [planId]="nutritionalPlan.id"></app-nutritional-plan-meals>
     </div>
   </div>
