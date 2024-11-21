@@ -1,0 +1,25 @@
+<div class="exercise-detail" *ngIf="!loading && exercise">
+    <h2>{{ exercise.description }}</h2>
+  
+    <!-- Video -->
+    <div class="video-container">
+      <iframe
+        [src]="videoUrl"
+        frameborder="0"
+        allowfullscreen
+        class="exercise-video"
+      ></iframe>
+    </div>
+  
+    <!-- Tips -->
+    <div class="exercise-tips">
+      <h3>Tips para este ejercicio:</h3>
+      <ul>
+        <li *ngFor="let tip of exercise.tips">{{ tip.content }}</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div *ngIf="loading">Cargando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+  
