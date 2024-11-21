@@ -1,3 +1,4 @@
+<div class="ex-tips-all">
 <div class="exercise-detail" *ngIf="!loading && exercise">
     <h2>{{ exercise.description }}</h2>
   
@@ -22,4 +23,4 @@
   
   <div *ngIf="loading">Cargando...</div>
   <div *ngIf="error" class="error">{{ error }}</div>
-  
+</div>

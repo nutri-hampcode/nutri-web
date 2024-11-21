@@ -4,8 +4,14 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #fffeeb;
+    margin-top: 220px;
   }
   
+  ::ng-deep .main-bod {
+    background-color: #fffeeb !important;
+    min-height: 170vh;
+}
+
   .loading {
     text-align: center;
     padding: 20px;

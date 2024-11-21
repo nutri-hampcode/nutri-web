@@ -7,8 +7,8 @@ import { NavbarComponent } from '../../../shared/components/navbar/navbar.compon
   selector: 'app-exercise-layout',
   standalone: true,
   imports: [RouterOutlet, RouterModule, CommonModule, NavbarComponent],
-  templateUrl: './exercise-layout.component.html',
-  styleUrl: './exercise-layout.component.css'
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.css'
 })
 export class ExerciseLayoutComponent{
 

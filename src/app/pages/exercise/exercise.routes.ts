@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { ExerciseLayoutComponent } from "./exercise-layout/exercise-layout.component";
+import { ExerciseLayoutComponent } from "./layout/layout.component";
 import { ExerciseShowComponent } from "./exercise-user/exercise-show/exercise-show.component";
 import { ExerciseDetailComponent } from "./exercise-user/exercise-tip-show/exercise-tip-show.component";
 

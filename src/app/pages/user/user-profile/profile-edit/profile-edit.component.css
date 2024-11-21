@@ -1,9 +1,17 @@
+
 .profile-container {
     width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fffeeb;
+    padding-top: 390px;
 }
+
+::ng-deep .main-bod {
+    background-color: #fffeeb !important;
+    min-height: 200vh;
+}
+
 
 .loading {
     text-align: center;
@@ -24,12 +32,12 @@
 }
 
 .profile-section {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 h2 {
     color: #333;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
     text-align: left;
 }
 
@@ -43,7 +51,7 @@ h3 {
 .profile-field {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    padding-bottom: 15px;
     padding: 8px 0;
     border-bottom: 1px solid #eee;
 }
@@ -56,7 +64,6 @@ h3 {
 
 .profile-field input,
 .profile-field select {
-    flex: 1;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -67,7 +74,7 @@ h3 {
 .button-group {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .save-button,

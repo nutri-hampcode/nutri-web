@@ -1,3 +1,9 @@
+.ex-tips-all{
+  width: calc(198vh - 100px);
+  height: calc(100vh - 100px);
+  background-color: #fffeeb !important;
+}
+
 .exercise-detail {
     width: 600px;
     margin: 0 auto;
